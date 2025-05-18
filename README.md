@@ -17,14 +17,14 @@
 
 ## Lets jump into code😉
 
-### Simple code to get sockets
+### 1. Simple code to get sockets
 
-1. Install requirements libraries
+*Install requirements libraries*
 ```bash
 pip install bclib
 ```
 
-2. Create a `main.py` 
+*Create a `main.py`*
 ```python
 from bclib import edge
 
@@ -46,12 +46,12 @@ def new_socket_message(context: edge.SocketContext):
     print(f"New message received from sessionId={context.message.session_id}")
 ```
 
-3. Run the code
+*Run the code*
 ```bash
 python main.py
 ```
 
-### Create a chat room by edge webSocket
+### 2. Create a chat room by edge webSocket
 
 *Install requirements*
 
@@ -65,7 +65,6 @@ pip install bclib
 ├── client.py     
 ├── room.py
 ├── main.py         
-└── ...
 ```
 *Codes*
 
@@ -189,6 +188,11 @@ async def process_all_other_message_async(context: edge.SocketContext):
     await ChatRoom.process_message_async(context.message,
                                          context.cms, context.body)
 
+```
+
+*Run the code*
+```bash
+python main.py
 ```
 
 ## 📄 License
